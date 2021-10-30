@@ -1,0 +1,89 @@
+:root {
+    --primarioOscuro: #32502E;
+    --primario: #406343;
+    --secundarioOscuro: #ECE7B4;
+    --secundario: #F3EFCC;
+    --blanco: #FFF;
+    --negro: #000;
+
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    background-color: var(--secundario)
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--primarioOscuro);
+    
+}
+
+.header__logo {
+    gap: 2rem;
+    width: 18rem;
+    height: 18rem;
+    margin: 2rem 0;
+}
+
+.navegacion {
+    background-color: var(--primarioOscuro);
+    display: flex;
+    align-items: flex-end;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.navegacion__enlace {
+    flex: 2;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+    align-content: end;
+}
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+    color: var(--secundario);
+}
+
+@media (min-width: 768px) {
+    .con-sidebar {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        column-gap: 4rem;
+        grid-auto-flow: column;
+    }
+
+    aside {
+        grid-column: 2 / 3;
+    }
+}
