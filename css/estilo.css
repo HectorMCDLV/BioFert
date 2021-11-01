@@ -1,6 +1,6 @@
 :root {
     --primarioOscuro: #32502E;
-    --primario: #406343;
+    --primario: #518d56;
     --secundarioOscuro: #ECE7B4;
     --secundario: #F3EFCC;
     --blanco: #FFF;
@@ -13,7 +13,6 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    background-color: var(--secundario)
 }
 
 *, *:before, *:after {
@@ -25,9 +24,26 @@ html {
     margin: 0 auto;
 }
 
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
 img {
     width: 100%;
 }
+
 
 h1, h2, h3 {
     text-align: center;
@@ -44,6 +60,7 @@ h3 {
     font-size: 2.4rem;
 }
 
+/** Header **/
 .header {
     display: flex;
     justify-content: space-around;
@@ -58,6 +75,7 @@ h3 {
     margin: 2rem 0;
 }
 
+@media (min-width: 768px) {
 .navegacion {
     background-color: var(--primarioOscuro);
     display: flex;
@@ -65,6 +83,7 @@ h3 {
     grid-auto-flow: column;
     justify-content: center;
     gap: 10rem;
+}
 }
 
 .navegacion__enlace {
@@ -108,12 +127,13 @@ h3 {
 
 /** Productos **/
 .producto{
-    background-color: var(--primario);
+    background-color: var(--primarioOscuro);
     padding: 1rem;
 }
 
 .producto__nombre {
     font-size: 4rem;
+    text-decoration: none;
 }
 
 .producto__precio {
