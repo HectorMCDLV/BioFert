@@ -25,6 +25,10 @@ html {
     margin: 0 auto;
 }
 
+img {
+    width: 100%;
+}
+
 h1, h2, h3 {
     text-align: center;
     color: var(--secundario);
@@ -87,4 +91,39 @@ h3 {
     aside {
         grid-column: 2 / 3;
     }
+}
+
+/** Grid **/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/** Productos **/
+.producto{
+    background-color: var(--primario);
+    padding: 1rem;
+}
+
+.producto__nombre {
+    font-size: 4rem;
+}
+
+.producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
 }
