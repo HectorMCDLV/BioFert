@@ -256,5 +256,22 @@ h3 {
     background-color: var(--secundarioOscuro);
 }
 
+.diseño_nosotros{
+    margin-top: 30px;
+    text-align: center;
+    
+    font-family:  var(--fuentePrincipal);
+    font-style: bold;
+    font-size: 30px;
+    background-color: var(--primarioOscuro);
+
+
+
+}
+.imagen_nosotros{
+    align-items: center;
+    width: 50%;
+    height: auto;
+}
 
    
