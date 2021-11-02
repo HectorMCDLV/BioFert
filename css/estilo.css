@@ -42,6 +42,7 @@ a {
 
 img {
     width: 100%;
+    border-radius: 1.8rem;
 }
 
 
@@ -141,6 +142,7 @@ h3 {
 /** Productos **/
 .producto{
     background-color: var(--primarioOscuro);
+    border-radius: 1.8rem;
     padding: 1rem;
 }
 
