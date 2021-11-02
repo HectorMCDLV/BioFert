@@ -126,6 +126,7 @@ h3 {
     }
 }
 
+
 /** Grid **/
 .grid {
     display: grid;
@@ -165,6 +166,7 @@ h3 {
 
 .Visualizacion__descripcion{
     font-family: var(--fuentePrincipal);
+    border-radius: 1.8rem;
     color: #000;
     margin: 4 rem;
     padding: 1rem;
@@ -173,4 +175,14 @@ h3 {
     font-style: bold;
     width: auto  ;
 
+}
+
+.articulos_index{
+    background-color: var(--primarioOscuro);
+}
+
+.img_contacto{
+    margin: 2rem;
+    padding: 1rem;
+    top: 1rem;
 }
