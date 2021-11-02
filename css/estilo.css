@@ -179,10 +179,16 @@ h3 {
 
 .articulos_index{
     background-color: var(--primarioOscuro);
+    font-family: var(--fuentePrincipal);
+    text-align:  center;
 }
 
 .img_contacto{
+    font-family: var(--fuentePrincipal);
     margin: 2rem;
     padding: 1rem;
     top: 1rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
