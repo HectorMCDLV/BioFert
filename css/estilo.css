@@ -160,3 +160,15 @@ h3 {
     margin: 1rem 0;
     text-align: center;
 }
+
+.Visualizacion__descripcion{
+    font-family: var(--fuentePrincipal);
+    color: #000;
+    margin: 4 rem;
+    padding: 1rem;
+    background-color: var(--secundarioOscuro);
+    text-align: right;
+    font-style: bold;
+    width: auto  ;
+
+}
