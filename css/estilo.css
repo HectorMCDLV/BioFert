@@ -92,11 +92,15 @@ h3 {
 @media (min-width: 768px) {
 .navegacion {
     background-color: var(--primarioOscuro);
-    display: flex;
+    display: inline-block;
+    
     align-items: flex-end;
     grid-auto-flow: column;
     justify-content: center;
+
     gap: 10rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 }
 
@@ -111,7 +115,15 @@ h3 {
 .navegacion__enlace--activo,
 .navegacion__enlace:hover {
     color: var(--secundario);
+    border-radius: 5px;
+    padding: 7px 13px;
 }
+
+
+
+
+
+
 
 @media (min-width: 768px) {
     .con-sidebar {
@@ -199,4 +211,46 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
+}
+
+
+.checkbtn{
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .checkbtn{
+        display: block;
+    }
+    .navegacion__enlace{
+        position: fixed; 
+        float: right;     
+        width: 100%;
+        height: 100vh;
+        background:#ECE7B4;
+        top: 220px;
+        left: -100%;
+        text-align: center;
+        display: block;
+        margin: auto;
+        padding: auto;
+        color:black;
+    }
+    .navegacion__enlace--activo,
+    .navegacion__enlace:hover{
+        color:var(--primarioOscuro);
+    }
+    #check:checked ~ .navegacion__enlace{
+        left:0;
+    }
+    
+   
 }
