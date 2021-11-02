@@ -171,9 +171,9 @@ h3 {
     margin: 4 rem;
     padding: 1rem;
     background-color: var(--secundarioOscuro);
-    text-align: right;
+    text-align: justify;
     font-style: bold;
-    width: auto  ;
+    width: auto;
 
 }
 
@@ -181,6 +181,7 @@ h3 {
     background-color: var(--primarioOscuro);
     font-family: var(--fuentePrincipal);
     text-align:  center;
+    border-radius: 1.8rem;
 }
 
 .img_contacto{
@@ -191,4 +192,11 @@ h3 {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (min-width: 768px) {
+.producto__diseño {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
 }
