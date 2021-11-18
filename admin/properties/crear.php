@@ -23,7 +23,8 @@
         $precio = mysqli_real_escape_string($db, $_POST['precio']);
         $almacen = mysqli_real_escape_string($db, $_POST['almacen']);
 
-        $imagen = $_FILES['imagen'];
+        
+        //$imagen = $_FILES['imagen'];
 
         if(!$nombre){
             $errores[] = "Debes añadir un nombre";
@@ -42,14 +43,15 @@
         }
 
 
-        $tamañoImagen = 1000 * 1000;
+        //$tamañoImagen = 1000 * 1000;
 
-        if($imagen['size'] > $tamañoImagen){
+        /*if($imagen['size'] > $tamañoImagen){
             $errores[] = "La imagen es muy pesada";
-        }
+        }*/
 
         if (empty($errores)){
-            $carpetaImagenes = '../../imagenes/';
+            /*
+            carpetaImagenes = '../../imagenes/';
 
             if(!is_dir($carpetaImagenes)){
                 mkdir($carpetaImagenes);
@@ -57,14 +59,14 @@
 
             $nombreImagen = md5( uniqid(rand(), true)) . ".jpg";
 
-            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen); */
 
-            $query = " INSERT INTO biofert (id, nombre, descripcion, precio, almacen) VALUES ('$id', '$nombre', '$descripcion', '$precio', '$almacen')";
+            $query = " INSERT INTO producto (id, nombre, descripcion, precio, almacen) VALUES ('$id', '$nombre', '$descripcion', '$precio', '$almacen')";
 
             $insercion = mysqli_query($db, $query);
 
             if ($insercion) {
-                header('Location: /admin?resultado=1');
+                header('Location: //localhost/biofert/admin/index.php?resultado=1');
             }
 
         }
@@ -85,28 +87,32 @@
             </div>
         <?php endforeach; ?>
 
-        <form class="formulario" id="crear-producto" method="POST" action="/admin/properties/crear.php" enctype="multipart/form-data">
+        <form class="formulario" id="crear-producto" method="POST" action="//localhost/biofert/admin/properties/crear.php" enctype="multipart/form-data">
             <fieldset>
                 <legend>Informacion General</legend>
 
                 <label for="ID">ID</label>
-                <input class="formulario__campo" type="number" min="1" id="id" placeholder="ID Producto" value="<?php echo $nombre; ?>">
+                <input class="formulario__campo" type="number" min="1" id="id" name="id" placeholder="ID Producto" value="<?php echo $id; ?>">
 
                 <label for="NOMBRE">Nombre</label>
                 <input class="formulario__campo" type="text" id="nombre" name="nombre" placeholder="Nombre Producto" value="<?php echo $nombre; ?>">
 
                 <label for="Descripcion">Descripción</label>
-                <input class="formulario__campo" type="text" id="descripcion">
+                <textarea class="formulario__campo--textarea" id="descripcion" name="descripcion"> <?php echo $descripcion; ?> </textarea>
 
                 <label for="Precio">Precio</label>
-                <input class="formulario__campo" type="number">
+                <input class="formulario__campo" type="number" id="precio" name="precio" placeholder="Precio" value="<?php echo $precio; ?>">
 
                 <label for="Almacen">Almacen</label>
-                <input class="formulario__campo">
+                <input class="formulario__campo" type="number" id="almacen" name="almacen" placeholder="Almacen" value="<?php echo $almacen; ?>">
                 
             </fieldset>
+            
+            
+            
         </form>
 
+        <button class="boton" type="submit" form="crear-producto">Crear Producto</button>
 
     </main>
 
