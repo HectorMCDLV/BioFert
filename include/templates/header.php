@@ -14,14 +14,14 @@
    
     <header class="header">
         
-        <a hred="index.html"> <img class = "header__logo" src="img/logo.jfif" alt="Logotipo"> </a>
+        <a hred="index.html"> <img class = "header__logo" src="//localhost/biofert/img/logo.jfif" alt="Logotipo"> </a>
         
         <nav class="navegacion">
             
-            <a class="navegacion__enlace <?php echo $activo===1 ? 'navegacion__enlace--activo' : ''; ?>" href="index.php">Inicio</a>
-            <a class="navegacion__enlace <?php echo $activo===2 ? 'navegacion__enlace--activo' : ''; ?>" href="productos.php">Productos</a>
-            <a class="navegacion__enlace <?php echo $activo===3 ? 'navegacion__enlace--activo' : ''; ?>" href="nosotros.php">Nosotros</a>
-            <a class="navegacion__enlace <?php echo $activo===4 ? 'navegacion__enlace--activo' : ''; ?>" href="contacto.php">Contacto</a>
+            <a class="navegacion__enlace <?php echo $activo===1 ? 'navegacion__enlace--activo' : ''; ?>" href="//localhost/biofert/index.php">Inicio</a>
+            <a class="navegacion__enlace <?php echo $activo===2 ? 'navegacion__enlace--activo' : ''; ?>" href="//localhost/biofert/productos.php">Productos</a>
+            <a class="navegacion__enlace <?php echo $activo===3 ? 'navegacion__enlace--activo' : ''; ?>" href="//localhost/biofert/nosotros.php">Nosotros</a>
+            <a class="navegacion__enlace <?php echo $activo===4 ? 'navegacion__enlace--activo' : ''; ?>" href="//localhost/biofert/contacto.php">Contacto</a>
             
         </nav>     
     </header>

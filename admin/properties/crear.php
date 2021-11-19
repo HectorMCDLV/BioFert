@@ -5,7 +5,6 @@
 
     $errores = [];
 
-    $id = '';
     $nombre = '';
     $descripcion = '';
     $precio = '';
@@ -17,14 +16,13 @@
     //Ejecutar el código después de que el usuario envía el formulario
     if ($_SERVER['REQUEST_METHOD']==='POST'){
 
-        $id = mysqli_real_escape_string($db, $_POST['nombre']);
-        $nombre = mysqli_real_escape_string($db, $_POST['precio']);
+        $nombre = mysqli_real_escape_string($db, $_POST['nombre']);
         $descripcion = mysqli_real_escape_string($db, $_POST['descripcion']);
         $precio = mysqli_real_escape_string($db, $_POST['precio']);
         $almacen = mysqli_real_escape_string($db, $_POST['almacen']);
 
         
-        //$imagen = $_FILES['imagen'];
+        $imagen = $_FILES['imagen'];
 
         if(!$nombre){
             $errores[] = "Debes añadir un nombre";
@@ -38,20 +36,17 @@
         if(!$precio){
             $errores[] = "Debes añadir un precio";
         }
-        if(!$nombre){
-            $errores[] = "Debes añadir un título";
+
+
+        $tamañoImagen = 1000 * 1000;
+
+        if($imagen['size'] > $tamañoImagen){
+            $errores[] = "La imagen es muy pesada";
         }
 
-
-        //$tamañoImagen = 1000 * 1000;
-
-        /*if($imagen['size'] > $tamañoImagen){
-            $errores[] = "La imagen es muy pesada";
-        }*/
-
         if (empty($errores)){
-            /*
-            carpetaImagenes = '../../imagenes/';
+            
+            $carpetaImagenes = '../../imagenes/';
 
             if(!is_dir($carpetaImagenes)){
                 mkdir($carpetaImagenes);
@@ -59,9 +54,9 @@
 
             $nombreImagen = md5( uniqid(rand(), true)) . ".jpg";
 
-            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen); */
+            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen); 
 
-            $query = " INSERT INTO producto (id, nombre, descripcion, precio, almacen) VALUES ('$id', '$nombre', '$descripcion', '$precio', '$almacen')";
+            $query = " INSERT INTO producto (id, nombre, descripcion, precio, almacen, imagen) VALUES ('$id', '$nombre', '$descripcion', '$precio', '$almacen', '$nombreImagen')";
 
             $insercion = mysqli_query($db, $query);
 
@@ -79,7 +74,7 @@
 
     <main class="contenedor">
         <h1>Crear Producto</h1>
-        <a href="/admin" class=boton>Volver</a>
+        <a href="//localhost/biofert/admin/index.php" class=boton>Volver</a>
 
         <?php foreach($errores as $error): ?>
             <div class="Alerta Error">
@@ -90,9 +85,6 @@
         <form class="formulario" id="crear-producto" method="POST" action="//localhost/biofert/admin/properties/crear.php" enctype="multipart/form-data">
             <fieldset>
                 <legend>Informacion General</legend>
-
-                <label for="ID">ID</label>
-                <input class="formulario__campo" type="number" min="1" id="id" name="id" placeholder="ID Producto" value="<?php echo $id; ?>">
 
                 <label for="NOMBRE">Nombre</label>
                 <input class="formulario__campo" type="text" id="nombre" name="nombre" placeholder="Nombre Producto" value="<?php echo $nombre; ?>">
@@ -106,6 +98,9 @@
                 <label for="Almacen">Almacen</label>
                 <input class="formulario__campo" type="number" id="almacen" name="almacen" placeholder="Almacen" value="<?php echo $almacen; ?>">
                 
+                <label for="Imagen">Imagen</label>
+                <input class="formulario__campo formulario__campo--imagen" type="file" id="imagen" name="imagen"  accept="image/png, image/jpg, image/jpeg">
+
             </fieldset>
             
             
