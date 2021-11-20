@@ -297,7 +297,7 @@ h3 {
 }
 
 .boton{
-    background: linear-gradient(125deg, transparent 10%, var(--secundario) 10%, var(--secundario) 90%,transparent 10%);
+    background-color: var(--blanco);
     border-style: none;
     color: var(--blanco);
     padding: 1rem 3rem;
@@ -311,4 +311,5 @@ h3 {
     text-align: center;
     border: none;
 }
+
    
