@@ -36,6 +36,8 @@
 
 ?>
 
+
+
 <main class="contenedor">
     <h1>Administrador de Productos</h1>
     <?php if( intval($resultado) === 1): ?>
@@ -46,7 +48,8 @@
     <p class="alerta exito">Producto Eliminado Correctamente</p>
 
     <?php endif; ?>
-    <a class="boton" href="//localhost/biofert/admin/properties/crear.php">Nuevo Producto</a>
+
+    <a class = "boton" href="//localhost/biofert/admin/properties/crear.php">Nuevo Producto</a>
 
     <table class="tabla">
     <thead>
