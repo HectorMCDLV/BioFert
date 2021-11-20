@@ -277,4 +277,38 @@ h3 {
     height: auto;
 }
 
+.tabla {
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.tabla thead {
+    background-color: var(--secundario);
+}
+
+.tabla thead th{
+    color: var(--blanco);
+    padding: 2rem;
+}
+
+.tabla thead td{
+    color: var(--blanco);
+    text-align: center;
+}
+
+.boton{
+    background: linear-gradient(125deg, transparent 10%, var(--secundario) 10%, var(--secundario) 90%,transparent 10%);
+    border-style: none;
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
    

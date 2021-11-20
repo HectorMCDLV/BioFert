@@ -46,7 +46,7 @@
     <p class="alerta exito">Producto Eliminado Correctamente</p>
 
     <?php endif; ?>
-    <a class="boton" href="//localhost/biofert/admin/properties/crear.php" class=boton>Nuevo Producto</a>
+    <a class="boton" href="//localhost/biofert/admin/properties/crear.php">Nuevo Producto</a>
 
     <table class="tabla">
     <thead>
