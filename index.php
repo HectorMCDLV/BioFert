@@ -1,36 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biofert</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-   
-
-
-
-
-
-    <header class="header">
-        
-        <a hred="index.html"> <img class = "header__logo" src="img/logo.jfif" alt="Logotipo"> </a>
-        
-        <nav class="navegacion">
-            
-            <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Inicio</a>
-            <a class="navegacion__enlace" href="productos.html">Productos</a>
-            <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
-            <a class="navegacion__enlace" href="contacto.html">Contacto</a>
-            
-        </nav>     
-    </header>
-   
+<?php 
+    require 'include/funciones.php';
+    incluirTemplate('header');
+?>   
     
     <main class="contenedor">
         <h1>Biofert</h1>
@@ -59,9 +30,6 @@
         
     </main>
 
-    <footer class="footer">
-        <p class="footer__texto">Biofert - Todos los derechos Reservados 2021.</p>
-    </footer>
-
-</body>
-</html>
+    <?php 
+        incluirTemplate('footer');
+    ?>

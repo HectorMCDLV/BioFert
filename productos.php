@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biofert Productos</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-
-<header class="header">
-    <a hred="index.html"> <img class = "header__logo" src="img/logo.jfif" alt="Logotipo"> </a>
-    <nav class="navegacion">
-        <a class="navegacion__enlace" href="index.html">Inicio</a>
-        <a class="navegacion__enlace navegacion__enlace--activo" href="productos.html">Productos</a>
-        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
-        <a class="navegacion__enlace" href="contacto.html">Contacto</a>
-    </nav>     
-</header>
+<?php 
+    require 'include/funciones.php';
+    incluirTemplate('header', 2);
+?>  
 
 <body>
     
@@ -29,7 +10,7 @@
         <h1>Nuestros Productos</h1>
         <div class="grid">
             <div class="producto">
-                <a href="producto.html">
+                <a href="producto.php">
                     <img class="producto__imagen" src="img/biofert_plus.png" alt="imagen Biofert">
                     <div class="producto__informacion">
                         <p class="producto__nombre">Biofert Plus</p>
@@ -38,7 +19,7 @@
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="producto.php">
                     <img class="producto__imagen" src="img/biofert_plus_gel.png" alt="imagen biofert_plus_gel">
                     <div class="producto__informacion">
                         <p class="producto__nombre">Biofert Plus Gel</p>
@@ -47,7 +28,7 @@
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="producto.php">
                     <img class="producto__imagen" src="img/biofert_1.jfif" alt="imagen Secuestrante Sodio">
                     <div class="producto__informacion">
                         <p class="producto__nombre">Secuestrante de Sodio Biofert OB</p>
@@ -56,7 +37,7 @@
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="producto.php">
                     <img class="producto__imagen" src="img/biofert_2.jfif" alt="Biofert Inicio">
                     <div class="producto__informacion">
                         <p class="producto__nombre">Biofert Inicio</p>
@@ -65,7 +46,7 @@
                 </a>
             </div>
             <div class="producto">
-                <a href="producto.html">
+                <a href="producto.php">
                     <img class="producto__imagen" src="img/biofert_3.jfif" alt="Biofert Llenado">
                     <div class="producto__informacion">
                         <p class="producto__nombre">Biofert Llenado</p>
@@ -77,9 +58,6 @@
         
     </main>
 
-    <footer class="footer">
-        <p class="footer__texto">Biofert - Todos los derechos Reservados 2021.</p>
-    </footer>
-
-</body>
-</html>
+    <?php 
+        incluirTemplate('footer');
+    ?>
