@@ -11,13 +11,11 @@
 <div class="grid">
     <?php while ( $producto = mysqli_fetch_assoc($resultado) ): ?>
     <div class="producto">
-        <a href="//localhost/biofert/producto.php?id=<?php echo $producto['ID']; ?>">
+        <a href="//localhost/biofert/producto.php">
             <img class="producto__portada" src="//localhost/biofert/imagenes/<?php echo $producto['Imagen']; ?>" alt="imagen producto">
             <div class="producto__informacion">
-                <p class="producto__titulo"> <?php echo $producto['Nombre']; ?> </p>
-                <p class="producto__precio"> <?php echo '$' . $producto['Descripcion']; ?> </p>
-                <p class="producto__info"><?php echo $producto['Precio']; ?> </p>
-                <p class="producto__info"><?php echo $producto['Almacen']; ?> </p>
+                <p class="producto__nombre"> <?php echo $producto['Nombre']; ?> </p>
+                <p class="producto__precio"> <?php echo '$' . $producto['Precio']; ?> </p>
             </div>
         </a>
     </div>
