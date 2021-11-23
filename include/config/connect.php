@@ -10,7 +10,6 @@ function conectarDB() :  mysqli{
  
 /* Attempt to connect to MySQL database */
     $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
- 
 // Check connection
     if(!$link){
         echo "No se ha podido conectar a la base de datos";
