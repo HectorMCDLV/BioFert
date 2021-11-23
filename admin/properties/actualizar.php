@@ -114,7 +114,7 @@
                 <label for="almacen">Almacen</label>
                 <input class="formulario__campo" type="number" id="almacen" name="almacen" placeholder="Almacen" value="<?php echo $almacen; ?>">
                 
-                <label for="imagen">Imagen</label>
+                <label for="imagen">Imagen</label>  
                 <input class="formulario__campo formulario__campo--imagen" type="file" id="imagen" name="imagen"  accept="image/png, image/jpg, image/jpeg">
             
                 <img src="//localhost/biofert/imagenes/<?php echo $imagenProducto ?>" class="imagen-small">
