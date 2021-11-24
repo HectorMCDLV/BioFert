@@ -55,24 +55,17 @@ require '../../include/config/connect.php';
         }
     } 
 
-   
-    
-
-    
+    require '../../include/funciones.php';
+    incluirTemplate('header');
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        Registrarse
-    </head>
-<body>
-    <div class ="container">
+<main>
+<div class ="formulario">
         <div class = "row">
             <div class = "col-md-12">
                 <h2>Registrar</h2>  
                 <p>Favor de llenar los datos para crear una cuenta</p>
-                <form action = " " method = "post">
+                <form class="fomulario" action = " " method = "post">
                     <div class = "form-group">
                             <label>Nombres</label>
                             <input type="text" name = "nombres" class = "form-control"
@@ -102,6 +95,8 @@ require '../../include/config/connect.php';
                 </form>
             </div>
         </div>
-    </div>
-</body>
-</html>
+</main>
+
+<?php 
+    incluirTemplate('footer');
+?>

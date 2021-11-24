@@ -1,6 +1,6 @@
 <?php 
     require 'include/funciones.php';
-    incluirTemplate('header');
+    incluirTemplate('header', 4);
 ?>  
 
 <body>

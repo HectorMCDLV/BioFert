@@ -37,7 +37,7 @@ require '../../include/config/connect.php';
 
 
 
-                $newhash=$usuario['contraseña'];//taken from db
+                $newhash = $usuario['contraseña'];//taken from db
 
 
                 var_dump( $newhash);
@@ -59,7 +59,7 @@ require '../../include/config/connect.php';
                     $_SESSION['login'] = true;
                     $_SESSION['nombre'] = $usuario['nombre']; 
                     
-                    header('Location: /../../nosotros.php'); 
+                    header('Location: /biofert/productos.php'); 
                 }
                 else{
                     $errores[] = "contraseña incorrecta";
@@ -74,46 +74,35 @@ require '../../include/config/connect.php';
          
         }
     } 
-
-    
-
-
-
+    require '../../include/funciones.php';
+    incluirTemplate('header');  
 ?>
 
+<main class="contenedor">
 
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-        <title>Login</title>
-</head>
-<body>
     <h1>Inicie Sesion</h1>
-        <div>
-            <form method="POST" action=''>
-            
-                
-                <table>
-                    <tr>
-                        <td>Correo:</td>
-                        <td><input type="email" name="email"
-                        placeholder= "Ingrese su correo"></td>
-                    </tr>
-                    <tr>
-                        <td>Contraseña:</td>
-                        <td><input type="password" name="contraseña"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                        <button type="sumbit" >Ingresar</button>
-                        <td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-    <h1>
-</body>
+    <?php foreach($errores as $error): ?>
+            <div class="alerta error">
+                <?php echo $error ?>
+            </div>
+    <?php endforeach; ?>
+
+    <form class = "formulario" method="POST" action=''>
+        
+        <fieldset>
+                <label>Correo: </label>
+                <input type="email" name="email">
+
+                <label>Constraseña: </label>
+                <input type="password" name="contraseña">
+
+                <a class="link" href="/biofert/admin/Login/Register.php">Registrate Aqui.</a>
+
+                <button type="sumbit" >Ingresar</button>
+        </fieldset>
+    </form>
+</main>
+
+<?php 
+    incluirTemplate('footer');
+?>
