@@ -10,15 +10,12 @@ require '../../include/config/connect.php';
     $password = '';
     $nombre = '';
     $apellido = '';
-    $telefono = '';
-
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $email = mysqli_real_escape_string( $link, filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) ) ;
         $password = mysqli_real_escape_string( $link, $_POST['contraseña'] );
         $nombre = mysqli_real_escape_string( $link, $_POST['nombres']);
         $apellido = mysqli_real_escape_string( $link, $_POST['apellidos'] );
-        $telefono = mysqli_real_escape_string($link, $_POST['telefono'] );
         if(!$email){
             $errores[] = " El email es obligatorio o no es válido ";
         }
@@ -34,15 +31,12 @@ require '../../include/config/connect.php';
             $errores[] = "Un Apellido es obligatorio ";
         }
 
-        if(!$telefono){
-            $errores[] = "El telefono es obligatorio ";
-        }
-
+      
         if(!$apellido){
             $errores[] = " El apellido es obligatorio ";
         }
 
-        $queryVerificacion = " SELECT id_cliente FROM cliente WHERE email = $email ";
+        $queryVerificacion = " SELECT id FROM cliente WHERE email = $email ";
         $verificacion = mysqli_query($link, $queryVerificacion);
         var_dump($queryVerificacion);
         if($verificacion){
@@ -54,16 +48,15 @@ require '../../include/config/connect.php';
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
             
             //INSERTAR
-            $query = " INSERT INTO cliente (nombres, apellidos,telefono, email, contraseña) VALUES ('${nombre}', '${apellido}', '${telefono}', '${email}', '${passwordHash}')";
+            $query = " INSERT INTO cliente (nombres, apellidos, email, contraseña) VALUES ('${nombre}', '${apellido}', '${email}', '${passwordHash}')";
                 mysqli_query($link, $query)  or die(mysqli_error($link)); ;
 
            
         }
     } 
 
-    if($_SESSION){
-        header('Location: /');      
-    }
+   
+    
 
     
 ?>
@@ -93,10 +86,6 @@ require '../../include/config/connect.php';
                     <div class = "form-group">
                             <label>Email</label>
                             <input type="Email" name = "email" class = "form-control"
-                             required>
-                    <div class = "form-group">
-                            <label>Telefono</label>
-                            <input type="tel" name = "telefono" class = "form-control"
                              required>
                     <div class = "form-group">
                             <label>Contraseña</label>
