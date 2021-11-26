@@ -71,7 +71,7 @@
                 <td> <?php echo $producto['descripcion']; ?> </td>
                 <td> <?php echo $producto['precio']; ?> </td>
                 <td> <?php echo $producto['almacen']; ?> </td>
-                <td><img src="//localhost/biofert/imagenes/<?php echo $producto['imagen'];?>" class="imagen-tabla"></td>
+                <td><img src="/biofert/imagenes/<?php echo $producto['imagen'];?>" class="imagen-tabla"></td>
                 <td>
                     <form method="POST" class="w-sm-100">
                         <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
