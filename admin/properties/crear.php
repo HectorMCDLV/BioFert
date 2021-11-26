@@ -101,7 +101,7 @@
                 <label for="Imagen">Imagen</label>
                 <input class="formulario__campo formulario__campo--imagen" type="file" id="imagen" name="imagen"  accept="image/png, image/jpg, image/jpeg">
 
-                <img src="//localhost/biofert/imagenes/<?php echo $imagenProducto ?>" class="imagen-small">
+                <img src="/biofert/imagenes/<?php echo $imagenProducto ?>" class="imagen-small">
             </fieldset>
         </form>
 
