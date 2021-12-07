@@ -1,11 +1,9 @@
 <?php 
+    session_start(); 
     require 'include/funciones.php';
     incluirTemplate('header', 3);
 ?>  
-
 <body>
-    
-
     <main class="contenedor">
         <h1>Sobre Nosotros</h1>
         <div class="diseño_nosotros">

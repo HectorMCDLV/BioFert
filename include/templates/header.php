@@ -26,6 +26,12 @@
         </nav>   
         
         <div>
+            <?php if($_SESSION): ?>
+            <a  href="//localhost/biofert/carrito.php?id=<?php echo $_SESSION['id']; ?>">
+            <?php endif; ?>
+            <?php if(!$_SESSION): ?>
+            <a  href="//localhost/biofert/carrito.php">
+            <?php endif; ?>
             <a href="/biofert/admin/login/login.php">
                 <svg width="45px" height="45px" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EEEEEE" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -42,5 +48,9 @@
                     <path d="M6 5l14 1l-1 7h-13" />
                 </svg>
             </a>
+            <?php if($_SESSION['nombre']): ?>
+            <a class="link" href="#">Hola <?php echo $_SESSION['nombre']; ?></a>
+            <a class="link" href="/admin/properties/cerrar_sesion.php">Cerrar Sesion</a>
+            <?php endif;?>
         </div>
     </header>
