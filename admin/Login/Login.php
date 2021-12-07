@@ -22,9 +22,6 @@ require '../../include/config/connect.php';
             $errores[] = " El password es obligatorio ";
         }
      
-
-       
-
         if(empty($errores)){
 
 
@@ -34,19 +31,13 @@ require '../../include/config/connect.php';
             if(!$verificacion === false && $verificacion->num_rows > 0 ){
 
                 $usuario = mysqli_fetch_assoc($verificacion);
-
-
-
-                $newhash = $usuario['contraseña'];//taken from db
-
+                $newhash = $usuario['contraseña']; 
 
                 var_dump( $newhash);
-               
 
                 var_dump(password_verify($password, $newhash));
 
                 $auth = password_verify($password, $newhash);
-
 
                 if ($auth) {
                     echo"verified";            
