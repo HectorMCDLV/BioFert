@@ -1,7 +1,8 @@
 <?php 
-    session_start(); 
+    
     require 'include/funciones.php';
     incluirTemplate('header');
+    var_dump($_SESSION);
 ?>   
     
     <main class="contenedor">

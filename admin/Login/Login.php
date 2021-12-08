@@ -8,7 +8,8 @@ require '../../include/config/connect.php';
     $errores = [];
     $email = '';
     $password = '';
-  
+    var_dump($_POST);
+
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $email = mysqli_real_escape_string( $link, filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) ) ;
@@ -48,7 +49,7 @@ require '../../include/config/connect.php';
                     $_SESSION['rol'] = $usuario['cliente'];
                     $_SESSION['id'] = $usuario['id'];
                     $_SESSION['login'] = true;
-                    $_SESSION['nombre'] = $usuario['nombre']; 
+                    $_SESSION['nombre'] = $usuario['nombres']; 
                     
                     header('Location: /biofert/productos.php'); 
                 }

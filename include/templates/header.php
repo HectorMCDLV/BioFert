@@ -1,3 +1,7 @@
+<?php
+if(!isset($_SESSION))
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +53,7 @@
                 </svg>
             </a>
             <?php if($_SESSION['nombre']): ?>
-            <a class="link" href="#">Hola <?php echo $_SESSION['nombre']; ?></a>
+            <h1>Hola <?php echo $_SESSION['nombre']; ?></h1>
             <a class="link" href="/admin/properties/cerrar_sesion.php">Cerrar Sesion</a>
             <?php endif;?>
         </div>
