@@ -10,6 +10,7 @@ require '../../include/config/connect.php';
     $password = '';
     $nombre = '';
     $apellido = '';
+    var_dump($_POST);
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $email = mysqli_real_escape_string( $link, filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) ) ;
@@ -38,7 +39,7 @@ require '../../include/config/connect.php';
 
         $queryVerificacion = " SELECT id FROM cliente WHERE email = $email ";
         $verificacion = mysqli_query($link, $queryVerificacion);
-        var_dump($queryVerificacion);
+        
         if($verificacion){
             $errores[] = " El email ya existe ";    
         }
@@ -49,9 +50,9 @@ require '../../include/config/connect.php';
             
             //INSERTAR
             $query = " INSERT INTO cliente (nombres, apellidos, email, contraseña) VALUES ('${nombre}', '${apellido}', '${email}', '${passwordHash}')";
-                mysqli_query($link, $query)  or die(mysqli_error($link)); ;
-
-           
+            //bien
+                mysqli_query($link, $query)  or die(mysqli_error($link)); 
+                
         }
     } 
 
