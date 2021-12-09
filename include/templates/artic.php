@@ -56,9 +56,9 @@
         <p class="alerta exito">producto Agragado al Carrito Exitosamente</p>
     <?php endif; ?>
     <h1><?php echo $producto['nombre']; ?></h1>
-    <div class="tienda">
-        <img class="tienda__imagen" src="//localhost/biofert/imagenes/<?php echo $producto['imagen']; ?>" alt="Producto">
-        <div class="tienda__info">
+    <div class="producto">
+        <img class="producto__imagen" src="//localhost/biofert/imagenes/<?php echo $producto['imagen']; ?>" alt="Producto">
+        <div class="producto__info">
             <p>
                 <?php echo $producto['descripcion']; ?>
             </p>
