@@ -3,14 +3,16 @@ session_start();
 require 'include/config/connect.php';
 
 $db = conectarDB();
-$id_cliente = $_SESSION;
 
-if($_SESSION['id']){
-    $query = " SELECT pedido.id_cliente as id_cliente, PedidoProducto.id_pedido as id_pedido, producto.imagen as imagen, producto.nombre as nombre, producto.precio as precio, pedidoProducto.almace as almacen FROM pedidoProducto INNER JOIN peido ON  pedido.id = pedidoProducto.id_pedido INNER JOIN producto ON producto.id = pedidoProducto.id_producto WHERE pedido.id_cliente = $id_cliente";
 
+if($_SESSION){
+    $id_cliente = $_SESSION['id'];
+    $query = "SELECT pedido.id_cliente as id_cliente, producto.nombre as nombre, producto.imagen as imagen, producto.precio as precio, productoxpedido.id_pedido as id_pedido, productoxpedido.cantidad as cantidad FROM productoxpedido INNER JOIN pedido ON pedido.id = productoxpedido.id_pedido INNER JOIN producto ON producto.id = productoxpedido.id_producto WHERE pedido.id_cliente = '$id_cliente' ";
+    
     $resultado = mysqli_query($db, $query);
-
-    $consultaTotal = " SELECT ";
+    
+    $consultaTotal = " SELECT SUM(producto.precio * productoxpedido.cantidad) as subtotal FROM productoxpedido INNER JOIN pedido ON  pedido.id = productoxpedido.id_pedido INNER JOIN producto ON producto.id = productoxpedido.id_producto WHERE id_cliente = $id_cliente ";
+        
 
     $resultadoSuma = mysqli_query($db, $consultaTotal);
     $suma = mysqli_fetch_assoc($resultadoSuma);
@@ -23,13 +25,13 @@ incluirTemplate('header');
 ?>
 
 <main class="contenedor">
-    <?php if($_SESSION['nombre']): ?>
+    <?php if($_SESSION): ?>
     <h1> ¡Hola <?php echo $_SESSION['nombre']; ?>!</h1>
     <h1>Tu Carrito de Compras</h1>
 
     <?php endif; ?>
 
-    <?php if(!$_SESSION['nombre']): ?>
+    <?php if(!$_SESSION): ?>
         <h1>No has Iniciado sesión</h1>
         <a href = "/biofert/admin/login/login.php"><h1>Logueate Aquí</h1></a>
         <h1>o</h1> <a href="/biofert/admin/login/register.php"><h1>Registrate Aquí</h1></a>
@@ -38,11 +40,10 @@ incluirTemplate('header');
         <?php while ( $producto = mysqli_fetch_assoc($resultado)): ?>
         <div class="carrito__producto">
             <a href="#">
-                <p class="carrito__info--titulo"><?php echo $producto['titulo']; ?></p>
-            </a>
-            <p class="carrito__info--autor">por <?php echo $producto['autor']; ?></p>
-            <p class="carrito__info--precio">$ <?php echo $producto['autor']; ?></p>
-            <p class="carrito__info--UD">Cantidad:  <?php echo $producto['autor']; ?></p>
+                <p class="carrito__info--titulo"><?php echo $producto['nombre']; ?></p>
+            </a>    
+            <p class="carrito__info--precio">$ <?php echo $producto['precio']; ?></p>
+            <p class="carrito__info--UD">Cantidad:  <?php echo $producto['cantidad']; ?></p>
             <p class="carrito__info--UD" href="">Eliminar</p>
 
         </div>
@@ -53,6 +54,7 @@ incluirTemplate('header');
         <button class="buton">Pagar</button>
     </div>
 </main>
+
 
 <?php
     mysqli_close($db);

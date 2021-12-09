@@ -52,9 +52,13 @@ session_start();
                     <path d="M6 5l14 1l-1 7h-13" />
                 </svg>
             </a>
-            <?php if($_SESSION['nombre']): ?>
+            <?php if($_SESSION): ?>
             <h1>Hola <?php echo $_SESSION['nombre']; ?></h1>
-            <a class="link" href="/admin/properties/cerrar_sesion.php">Cerrar Sesion</a>
+            <a class="link" href="/biofert/admin/properties/cerrar_sesion.php">Cerrar Sesion</a>
+            <?php endif;?>
+
+            <?php if(!$_SESSION): ?>
+            <h1>Hola, Invitado </h1>
             <?php endif;?>
         </div>
     </header>
