@@ -177,9 +177,9 @@ table,th,td {
 
 /** Productos **/
 .producto{
-    background-color: var(--primarioOscuro);
     border-radius: 1.8rem;
-    padding: 1rem;
+    padding: 2rem;
+    margin: 3rem;
 }
 
 .producto__nombre {
@@ -207,8 +207,8 @@ table,th,td {
     font-family: var(--fuentePrincipal);
     border-radius: 1.8rem;
     color: #000;
-    margin: 5 rem;
-    padding: 1rem;
+    margin: 5rem;
+    padding: 2rem;
     background-color: var(--secundarioOscuro);
     text-align: justify;
     font-style: bold;
