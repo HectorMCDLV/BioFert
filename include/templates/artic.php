@@ -64,7 +64,7 @@
             </p>
 
             <form id="compra" class="formulario" method="POST">   
-                <input type="hidden" name="id_producto" value="<?php echo $comic['id'];?>">
+                <input type="hidden" name="id_producto" value="<?php echo $producto['id'];?>">
                 <input class="formulario__campo" type="number" name="cantidad" placeholder="Cantidad" min="1" value="1">
             </form>
             <input class="boton w-sm-100" type="submit" form="compra" value="Agregar al Carrito">
