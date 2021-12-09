@@ -17,12 +17,12 @@
 
     $errores = [];
 
-    $id = $producto['ID'];
-    $nombre = $producto['Nombre'];
-    $descripcion = $producto['Descripcion'];
-    $precio = $producto['Precio'];
-    $almacen = $producto['Almacen'];
-    $imagenProducto = $producto['Imagen'];
+    $id = $producto['id'];
+    $nombre = $producto['nombre'];
+    $descripcion = $producto['descripcion'];
+    $precio = $producto['precio'];
+    $almacen = $producto['almacen'];
+    $imagenProducto = $producto['imagen'];
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $nombre = mysqli_real_escape_string($db, $_POST['nombre']);
@@ -69,7 +69,7 @@
                 move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
             }
             else{
-                $nombreImagen = $producto['Imagen'];
+                $nombreImagen = $producto['imagen'];
             }
 
             $query = " UPDATE producto SET nombre = '${nombre}', descripcion = '${descripcion}', precio = '${precio}', almacen = '${almacen}', imagen = '${nombreImagen}'  WHERE id = ${id} "; 
