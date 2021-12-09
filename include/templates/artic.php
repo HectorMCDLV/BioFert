@@ -40,7 +40,7 @@
                 header("Location: //localhost/biofert/articulo.php?id=$id&request=1");
             }
         }
-        if($verificacion['id_carrito']){
+        if($verificacion['id_pedido']){
             $query = " UPDATE productoxpedido SET cantidad = cantidad + ${cantidad} WHERE id_pedido = '${id_pedido}' AND id_producto = '${id_producto}'";
             $resultado = mysqli_query($db, $query);
 
