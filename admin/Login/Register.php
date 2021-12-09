@@ -50,9 +50,21 @@ require '../../include/config/connect.php';
             
             //INSERTAR
             $query = " INSERT INTO cliente (nombres, apellidos, email, contraseña) VALUES ('${nombre}', '${apellido}', '${email}', '${passwordHash}')";
+            
+            
+
             //bien
                 mysqli_query($link, $query)  or die(mysqli_error($link)); 
-                
+            
+            $queryId = " SELECT id FROM cliente WHERE email = '${email}'";
+            $resultadoId = mysqli_query($link, $queryId);
+
+            $cliente = mysqli_fetch_assoc($resultadoId);
+            $clienteid = $cliente['id'];
+            $querypedido = " INSERT INTO pedido (id_cliente) VALUES ($clienteid)";
+            mysqli_query($link, $querypedido)  or die(mysqli_error($link)); 
+
+
         }
     } 
 

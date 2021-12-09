@@ -2,7 +2,7 @@
     
     require 'include/funciones.php';
     incluirTemplate('header');
-    var_dump($_SESSION);
+    
 ?>   
     
     <main class="contenedor">
