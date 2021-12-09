@@ -22,9 +22,11 @@
     if( $_SERVER['REQUEST_METHOD'] === 'POST' ){
         $id_producto = $_POST['id_producto'];
         $id_cliente = $_SESSION['id'];
-        $consulta_pedido = " SELECT id FROM pedido WHERE id_cliente = $id_cliente ";
+        $consulta_pedido = " SELECT id FROM pedido WHERE id_cliente = $id_cliente";
         $resultado_consulta_pedido = mysqli_query($db, $consulta_pedido);
+        
         $pedido = mysqli_fetch_assoc($resultado_consulta_pedido);
+        
         $id_pedido = $pedido['id'];
         $cantidad = mysqli_real_escape_string( $db, $_POST['cantidad'] );
 
