@@ -192,8 +192,12 @@ table,th,td {
     color: var(--secundario);
 }
 
+.producto__imagen{
+    margin-right: 2rem;
+}
+
 .producto__nombre,
-.producto__precio {
+.producto__precio{
     font-family: var(--fuentePrincipal);
     margin: 1rem 0;
     text-align: center;
@@ -203,7 +207,7 @@ table,th,td {
     font-family: var(--fuentePrincipal);
     border-radius: 1.8rem;
     color: #000;
-    margin: 4 rem;
+    margin: 5 rem;
     padding: 1rem;
     background-color: var(--secundarioOscuro);
     text-align: justify;
