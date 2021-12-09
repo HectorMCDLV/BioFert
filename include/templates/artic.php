@@ -58,8 +58,8 @@
     <h1><?php echo $producto['nombre']; ?></h1>
     <div class="producto__diseño">
         <img class="producto__imagen" src="//localhost/biofert/imagenes/<?php echo $producto['imagen']; ?>" alt="Producto">
-        <div class="producto__info">
-            <p>
+        <div class="producto">
+            <p class = "Visualizacion__descripcion">
                 <?php echo $producto['descripcion']; ?>
             </p>
 
@@ -68,6 +68,7 @@
                 <input class="formulario__campo" type="number" name="cantidad" placeholder="Cantidad" min="1" value="1">
             </form>
             <input class="boton w-sm-100" type="submit" form="compra" value="Agregar al Carrito">
+            </form>
         </div>
     </div>
 </main>
