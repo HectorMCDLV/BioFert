@@ -392,4 +392,102 @@ table,th,td {
 
 }
 
-   
+.link{
+    color: var(--blanco);
+    font-size: 2rem;
+    text-align: left;
+}
+
+.link:hover{
+    color: var(--secundario);
+    font-size: 2rem;
+    text-align: left;
+}
+
+/*Carrito*/
+.carrito{
+    display: grid;
+    gap: 2rem;
+    grid-template-rows: repeat(auto-fill, minmax(min(100%, 25rem),1fr));
+    grid-template-columns: repeat(2, 1fr);
+    margin: 3rem 0;
+    padding: 3rem 0;
+}
+
+.carrito__producto{
+    display: flex;
+    align-items: flex-start;
+}
+
+.carrito__imagen{
+    height: 80rem;
+    width: 21rem;
+    height: 32rem;
+}
+
+.carrito__info{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    padding: 0 3rem;
+    align-self: end;
+    
+}
+
+.carrito__info form{
+    display: inline;
+}
+
+.carrito__info--titulo{
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.carrito__info--precio{
+    font-weight: bold;
+    font-size: 3.2rem;
+}
+
+.carrito__info--autor{
+    font-size: 2rem;
+}
+
+.carrito__info--select{
+    border-radius: 3rem;
+    width: 9rem;
+    height: 3rem;
+}
+
+.carrito__info--UD{
+    color: var(--secundario);
+    font-size: 2rem;
+}
+
+.carrito__info--UD:last-child{
+    margin: 0 0 0 2rem;
+}
+
+.carrito__subtotal{
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.carrito__total{
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.carrito__vacio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito__info--compra{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    padding: 0 3rem;
+    align-self: start;
+    
+}
