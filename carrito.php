@@ -7,7 +7,9 @@ $db = conectarDB();
 
 if($_SESSION){
     $id_cliente = $_SESSION['id'];
-    $query = "SELECT pedido.id_cliente as id_cliente, producto.nombre as nombre, producto.imagen as imagen, producto.precio as precio, productoxpedido.id_pedido as id_pedido, productoxpedido.cantidad as cantidad FROM productoxpedido INNER JOIN pedido ON pedido.id = productoxpedido.id_pedido INNER JOIN producto ON producto.id = productoxpedido.id_producto WHERE pedido.id_cliente = '$id_cliente' ";
+    $query = "SELECT producto.id as id_producto, pedido.id_cliente as id_cliente, producto.nombre as nombre, producto.imagen as imagen, producto.precio as precio, productoxpedido.id_pedido as id_pedido, productoxpedido.cantidad as cantidad
+              FROM productoxpedido INNER JOIN pedido ON pedido.id = productoxpedido.id_pedido INNER JOIN producto ON producto.id = productoxpedido.id_producto
+              WHERE pedido.id_cliente = '$id_cliente' ";
     
     $resultado = mysqli_query($db, $query);
     
@@ -17,6 +19,29 @@ if($_SESSION){
     $resultadoSuma = mysqli_query($db, $consultaTotal);
     $suma = mysqli_fetch_assoc($resultadoSuma);
     $subTotal = $suma['subtotal'];
+}
+
+if( $_SERVER['REQUEST_METHOD'] === 'POST' ){
+        
+    $id_producto = $_POST['id_producto'];
+    
+    $id_producto = filter_var($id_producto, FILTER_VALIDATE_INT);
+    
+    $id_pedido = $_POST['id_pedido'];
+    
+    $id_pedido = filter_var($id_pedido, FILTER_VALIDATE_INT);
+   
+
+    if($id_producto){
+        $eliminarProducto = " DELETE FROM productoxpedido WHERE id_producto = ${id_producto} AND id_pedido = ${id_pedido} ";
+        
+        $resultadoElim = mysqli_query($db, $eliminarProducto);
+        
+    }
+
+    if($resultadoElim){
+        header('Location: /biofert/carrito.php');
+    }
 }
 
 require 'include/funciones.php';
@@ -45,6 +70,12 @@ incluirTemplate('header');
             <p class="carrito__info--precio">$ <?php echo $producto['precio']; ?></p>
             <p class="carrito__info--UD">Cantidad:  <?php echo $producto['cantidad']; ?></p>
             <p class="carrito__info--UD" href="">Eliminar</p>
+            <form method="POST">
+                            <input type="hidden" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
+                            <input type="hidden" name="id_pedido" value="<?php echo $producto['id_pedido']; ?>">
+                            <input type="submit" value="Eliminar" class="reset carrito__info--UD"></input>
+            </form>
+
 
         </div>
     </div> 
