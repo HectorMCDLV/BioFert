@@ -99,6 +99,7 @@ table,th,td {
     margin: auto;
 }
 
+
 @media (min-width: 768px) {
     .navegacion {
         background-color: var(--primarioOscuro);
@@ -177,6 +178,7 @@ table,th,td {
 
 /** Productos **/
 .producto{
+    background: var(--primarioOscuro);
     border-radius: 1.8rem;
     padding: 2rem;
     margin: 3rem;
@@ -329,25 +331,20 @@ table,th,td {
 /* Formulario */
 
 .formulario{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
 }
 
-@media (min-width: 76.8rem) {
-    .formulario{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        font-family: var(--fuentePrincipal);
-        color: var(--blanco);
-    }
-}
+
 
 .form-group {
     position: relative;
+
 }
 
 .form-control {
@@ -383,7 +380,6 @@ table,th,td {
     bottom: 15px;
     z-index: 100;
     font-size: 16px;
-    opacity: 0;
 }
 
 .formulario__mensaje {
@@ -393,15 +389,34 @@ table,th,td {
     padding: 0 15px;
     border-radius: 3px;
     display: none;
-    
+}
+
+.formulario__mensaje-activo{
+    display: block;
 }
 
 .formulario__mensaje p{
     margin: 0;
-    
 }
 
+.formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
 
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+.form-group-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.form-group-correcto {
+
+}
 
 .formulario fieldset{
     display: grid;

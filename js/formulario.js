@@ -13,10 +13,10 @@ const validarFormulario = (e) => {
     switch (e.target.name) {
         case "nombres":
             if(expresiones.nombre.test(e.target.value)){
-                document.getElementById('grupo__usuario').classList.remove('formulario__grupo-incorrecto');
-                document.getElementById('grupo__usuario').classList.add('formulario__grupo-correcto');
+                document.getElementById('grupo__nombre').classList.remove('formulario__grupo-incorrecto');
+                document.getElementById('grupo__nombre').classList.add('formulario__grupo-correcto');
             } else {
-                document.getElementById('grupo__usuario').classList.add('formulario__grupo-incorrecto');
+                document.getElementById('grupo__nombre').classList.add('formulario__grupo-incorrecto');
             }
         break;
         case "apellido":
@@ -41,5 +41,6 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
-})
+});
+
 
