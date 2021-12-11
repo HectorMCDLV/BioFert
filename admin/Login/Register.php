@@ -10,7 +10,6 @@ require '../../include/config/connect.php';
     $password = '';
     $nombre = '';
     $apellido = '';
-    var_dump($_POST);
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $email = mysqli_real_escape_string( $link, filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) ) ;
@@ -65,6 +64,7 @@ require '../../include/config/connect.php';
             mysqli_query($link, $querypedido)  or die(mysqli_error($link)); 
 
 
+            header('Location: /biofert/admin/Login/Login.php');
         }
     } 
 

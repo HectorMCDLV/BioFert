@@ -8,7 +8,6 @@ require '../../include/config/connect.php';
     $errores = [];
     $email = '';
     $password = '';
-    var_dump($_POST);
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
@@ -34,9 +33,7 @@ require '../../include/config/connect.php';
                 $usuario = mysqli_fetch_assoc($verificacion);
                 $newhash = $usuario['contraseña']; 
 
-                var_dump( $newhash);
-
-                var_dump(password_verify($password, $newhash));
+                
 
                 $auth = password_verify($password, $newhash);
 

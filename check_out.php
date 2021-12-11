@@ -47,7 +47,7 @@
         <div class="carrito__producto">
             
             <a href="#">
-                <img class="carrito__imagen" src="/img/<?php echo $compra['imagen']; ?>" >
+                <img class="carrito__imagen" src="/biogfert/img/<?php echo $compra['imagen']; ?>" >
             </a>
 
             <div class="carrito__info--compra">
@@ -103,8 +103,8 @@
 
 
                         //INSERTAR FACTURA PHP
-                        //actions.redirect('https://jojocomics.herokuapp.com/factura.php');         
-
+                        //actions.redirect('https://jojocomics.herokuapp.com/recibo.php');         
+                        header('Location: /biofert/recibo.php');
 
                     });
                     },
