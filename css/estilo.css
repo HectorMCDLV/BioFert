@@ -99,6 +99,7 @@ table,th,td {
     margin: auto;
 }
 
+
 @media (min-width: 768px) {
     .navegacion {
         background-color: var(--primarioOscuro);
@@ -177,6 +178,7 @@ table,th,td {
 
 /** Productos **/
 .producto{
+    background: var(--primarioOscuro);
     border-radius: 1.8rem;
     padding: 2rem;
     margin: 3rem;
@@ -329,25 +331,109 @@ table,th,td {
 /* Formulario */
 
 .formulario{
-    display: flex;
-    flex-direction: column;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     font-size: 3rem;
     font-family: var(--fuentePrincipal);
-    color: var(--blanco);
-    margin: 0 2rem;
+    color: var(--blanco); 
+
 }
 
-@media (min-width: 76.8rem) {
-    .formulario{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        font-family: var(--fuentePrincipal);
-        color: var(--blanco);
+@media screen and (max-width: 800px)
+{
+    .formulario {
+        grid-template-columns: 1fr;
     }
 }
+
+.formulario__grupo-input {
+    position: relative;
+
+}
+
+.formulario__input {
+    width: 100%;
+    background: var(--blanco);
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+
+.formulario__input:focus {
+    border: 3px solid var(--primarioOscuro);
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-activo {
+    display: block;
+}
+
+.formulario__validacion-estado{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #f66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo{
+    display: block;
+}
+
+.formulario__mensaje p{
+    margin: 0;
+}
+
+.formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+.formulario__grupo-correcto 
+.formulario__validacion-estado { 
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+}
+
 .formulario fieldset{
     display: grid;
     columns: 1;

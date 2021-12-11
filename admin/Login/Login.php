@@ -76,7 +76,7 @@ require '../../include/config/connect.php';
             </div>
     <?php endforeach; ?>
 
-    <form class = "formulario" method="POST" action=''>
+    <form class = "formulario" method="POST" id = "formulario" action=''>
         
         <fieldset>
                 <label>Correo: </label>
