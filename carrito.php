@@ -81,8 +81,10 @@ incluirTemplate('header');
     </div> 
     <?php endwhile; ?>
     <div>
-        <h3 class="carrito__subtotal">Subtotal: $<?php echo $subTotal; ?></h3>
-        <button class="buton">Pagar</button>
+        <a href="/biofert/check_out.php">   
+            <h3 class="carrito__subtotal">Subtotal: $<?php echo $subTotal; ?></h3>
+            <button class="buton" >Pagar</button>
+        </a>  
     </div>
 </main>
 
