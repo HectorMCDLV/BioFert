@@ -78,34 +78,55 @@ require '../../include/config/connect.php';
             <div class = "col-md-12">
                 <h2>Registrar</h2>  
                 <p>Favor de llenar los datos para crear una cuenta</p>
-                <form class="fomulario" action = " " method = "post">
+                <form class="formulario" action = " " method = "post">
                     <div class = "form-group">
                             <label>Nombres</label>
                             <input type="text" name = "nombres" class = "form-control"
                              required>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            <p class="formulario__input-error">El Nombre no es valido</p>
 
                     <div class = "form-group">
                             <label>Apellidos</label>
                             <input type="text" name = "apellidos" class = "form-control"
                              required>
+                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                             <p class="formulario__input-error">El Apellido no es valido</p>
 
                     <div class = "form-group">
                             <label>Email</label>
                             <input type="Email" name = "email" class = "form-control"
                              required>
+                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                             <p class="formulario__input-error">El Email no es valido</p>
+
                     <div class = "form-group">
                             <label>Contraseña</label>
                             <input type="password" name = "contraseña" class = "form-control"
                              required>
+                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                             <p class="formulario__input-error">La Contraseña no es valida</p>
+
                     <div class = "form-group">
                             <label>Confirma Contraseña</label>
                             <input type="password" name = "confirma_contraseña" class = "form-control"
                              required>
+                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                             <p class="formulario__input-error">Las dos Contraseñas deben se iguales</p>
+
                     <div class = "form-group">
-                            <input type="submit" name = "submit"  value="Submit">
+                            <button type="submit" name = "submit"  value="Submit">Enviar</button>
                     </div>
+
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class = "fas fa-exclamation-triangle"></i> <b>Error:</b> Llenar todos los campos </p>
+                    </div>
+
                     <p>Tienes Cuenta <a href="Login.php">Login
                 </form>
+
+                <script src = "//localhost/biofert/js/formulario.js"></script>
+                <script src = "https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
             </div>
         </div>
 </main>
