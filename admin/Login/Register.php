@@ -5,17 +5,19 @@ require '../../include/config/connect.php';
     $link = conectarDB();
     session_start(); 
     
+
     $errores = [];
     $email = '';
     $password = '';
     $nombre = '';
     $apellido = '';
+    var_dump($_POST);
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $email = mysqli_real_escape_string( $link, filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) ) ;
         $password = mysqli_real_escape_string( $link, $_POST['contraseña'] );
-        $nombre = mysqli_real_escape_string( $link, $_POST['nombres']);
-        $apellido = mysqli_real_escape_string( $link, $_POST['apellidos'] );
+        $nombre = mysqli_real_escape_string( $link, $_POST['nombre']);
+        $apellido = mysqli_real_escape_string( $link, $_POST['apellido'] );
         if(!$email){
             $errores[] = " El email es obligatorio o no es válido ";
         }
@@ -80,29 +82,59 @@ require '../../include/config/connect.php';
             </div>
         <?php endforeach; ?>
 
-        <form class="formulario" id="login" method="POST">
-            <fieldset>
-                <label for="email">E-mail</label>
-                <input class="formulario__campo" type="email" id="email" name="email" placeholder="Tu correo" value="<?php echo $email; ?>" required> 
+        <form class="formulario" id="formulario" method="POST">
+            <div class = "formulario__grupo" id="grupo__nombre">
+                <label class = "formulario__label" for="nombre">Nombre(s)</label>
+                <div class="formulario__grupo-input">
+                    <input class="formulario__input" type="text" id="nombre" name="nombre" placeholder="Nombre(s)" value="<?php echo $nombre; ?>" required> 
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El Nombre ingresado no es valido</p>
+            </div>
 
-                <label for="contraseña">Contraseña</label>
-                <input class="formulario__campo" type="password" name="contraseña" placeholder="Contraseña" <?php echo $password; ?>  required>
+            <div class = "formulario__grupo" id="grupo__apellido">
+                <label class = "formulario__label" for="apellido">Apellido(s)</label>
+                <div class="formulario__grupo-input">
+                    <input class="formulario__input" type="text" id ="apellido" name="apellido" placeholder="Apellido(s)" value="<?php echo $apellido; ?>" required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El Apellido ingresado no es valido</p>
+            </div>
+                
+            <div class = "formulario__grupo" id="grupo__email">
+                <label class = "formulario__label" for="email">E-mail</label>
+                <div class="formulario__grupo-input">
+                    <input class="formulario__input" type="email" id="email" name="email" placeholder="Tu correo" value="<?php echo $email; ?>" required> 
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El email ingresado no es valido</p>
+            </div>
 
-                <label for="nombre">Nombre(s)</label>
-                <input class="formulario__campo" type="text" id="nombre" name="nombres" placeholder="Nombre(s)" value="<?php echo $nombre; ?>" required> 
+            <div class = "formulario__grupo" id="grupo__contraseña">
+                <label class = "formulario__label" for="contraseña">Contraseña</label>
+                <div class="formulario__grupo-input">
+                    <input class="formulario__input" type="password" name="contraseña" placeholder="Contraseña" <?php echo $password; ?>  required>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">La contraseña ingresada no es valida</p>
+            </div>
 
-                <label for="apellido">Apellido(s)</label>
-                <input class="formulario__campo" type="text" name="apellidos" placeholder="Apellido(s)" value="<?php echo $apellido; ?>" required>
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+            </div>
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            </div>
 
                 <div class="alinear-derecha flex">
                     <input class="boton w-sm-100" type="submit" value="Registrarse">
                 </div>
-            </fieldset>
         </form>
     </main>
 
-<script src = "//localhost/biofert/js/formulario.js"></script>
-<script src = "https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src = "//localhost/biofert/js/formulario.js"></script>
+    <script src = "https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
 <?php 
     incluirTemplate('footer');
