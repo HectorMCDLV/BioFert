@@ -1,7 +1,6 @@
+
 <?php
-
 require 'fpdf/fpdf.php';
-
 
 require 'include/config/connect.php';
 
@@ -54,7 +53,9 @@ $TotalFinal =$importe + $total ;
 
 //Create a new PDF file
 $pdf=new FPDF();
+$pdf->AliasNbPages();
 $pdf->AddPage();
+
 
 //Fields Name position
 $Y_Fields_Name_position = 20;
@@ -66,6 +67,7 @@ $Y_Table_Position = 26;
 $pdf->SetFillColor(232,232,232);
 //Bold Font for Field Name
 $pdf->SetFont('Arial','B',12);
+$pdf->Cell(0,10,'Recibo',0,0,'C');
 $pdf->SetY($Y_Fields_Name_position);
 $pdf->SetX(45);
 $pdf->Cell(20,6,'CANT',1,0,'L',1);
