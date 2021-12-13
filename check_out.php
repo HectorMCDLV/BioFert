@@ -66,6 +66,8 @@
                 </a>
             </div>
 
+
+             
         </div>
         <div class="carrito__total">
             <h3 class="carrito__subtotal">Total: $<?php echo $total; ?> MXN</h3>
@@ -122,8 +124,16 @@
             </script>
         </div>
     </div>
+    
+    <div>
+        <a href="/biofert/recibo.php">   
+            <h3 class="carrito__subtotal">Descarge su recibo aqui</h3>
+            <button class="buton" >Recibo</button>
+        </a>  
+    </div>
 </main>
 
 <?php
+
     incluirTemplate('footer');
 ?>
