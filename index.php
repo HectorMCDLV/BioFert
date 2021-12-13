@@ -4,7 +4,23 @@
     incluirTemplate('header');
     
 ?>   
-    
+    <div class="slider">
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide"><a href="//localhost/biofert/productos.php"><img class = "slider__img" src="//localhost/biofert/img/slider/slider1.jpg" alt="bn"></a></li>
+                    <li class="glide__slide"><a href="//localhost/biofert/productos.php"><img class = "slider__img" src="//localhost/biofert/img/slider/slider2.jpg" alt="bn"></a></li>
+                    <li class="glide__slide"> <a href="//localhost/biofert/productos.php"><img class = "slider__img" src="//localhost/biofert/img/slider/slider3.jpg" alt="bn"></a></li>
+                </ul>
+            </div>
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                <button class="glide__bullet" data-glide-dir="=0"></button>
+                <button class="glide__bullet" data-glide-dir="=1"></button>
+                <button class="glide__bullet" data-glide-dir="=2"></button>
+            </div>
+        </div>
+    </div>  
+
     <main class="contenedor">
         <h1>Biofert</h1>
 

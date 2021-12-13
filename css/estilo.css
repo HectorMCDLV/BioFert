@@ -330,14 +330,29 @@ table,th,td {
 
 /* Formulario */
 
-.formulario{
-    
+.centrar{
+    display: grid;
+    justify-items: center;
+}
+
+.formulario{  
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     font-size: 3rem;
     font-family: var(--fuentePrincipal);
     color: var(--blanco); 
+}
+
+.formularioLogin{  
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    font-size: 3rem;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco); 
+    width: 35rem;
+    align-self: center;
 
 }
 
@@ -575,5 +590,15 @@ table,th,td {
     color: var(--blanco);
     padding: 0 3rem;
     align-self: start;
-    
+}
+
+.slider li{
+    display: flex;
+    justify-content: center;
+}
+
+.slider__img{
+    width: 153rem;
+    height: 35rem;
+    border-radius: 0rem;
 }

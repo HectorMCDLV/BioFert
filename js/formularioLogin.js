@@ -1,5 +1,5 @@
-const formulario = document.getElementById('formulario') //id del formulario al que queremos afectar
-const inputs = document.querySelectorAll('#formulario'); //Arreglo de los inputs que tenemos el formulario
+const formulario = document.getElementById('formularioLogin') //id del formulario al que queremos afectar
+const inputs = document.querySelectorAll('#formularioLogin'); //Arreglo de los inputs que tenemos el formulario
 
 const expresiones = {
     usuario: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guionbajo
@@ -16,14 +16,6 @@ formulario.addEventListener('submit', (evento) => {
 
 const validarFormulario = (e) => {
     switch (e.target.name) {
-        
-        case "nombre":
-            validarCampo(expresiones.nombre, e.target, 'nombre')
-        break;
-        
-        case "apellido":
-            validarCampo(expresiones.nombre, e.target, 'apellido')
-        break;
         case "email":
             validarCampo(expresiones.correo, e.target, 'email')
         break;
@@ -66,7 +58,3 @@ inputs.forEach((input) => {
 function obtenerId(evento){
     datos[evento.target.id] = evento.target.value;
 }
-
-
-
-

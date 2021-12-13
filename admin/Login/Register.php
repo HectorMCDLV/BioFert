@@ -113,7 +113,7 @@ require '../../include/config/connect.php';
             <div class = "formulario__grupo" id="grupo__contraseña">
                 <label class = "formulario__label" for="contraseña">Contraseña</label>
                 <div class="formulario__grupo-input">
-                    <input class="formulario__input" type="password" name="contraseña" placeholder="Contraseña" <?php echo $password; ?>  required>
+                    <input class="formulario__input" type="password" id="contraseña" name="contraseña" placeholder="Contraseña" <?php echo $password; ?>  required>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">La contraseña ingresada no es valida</p>
@@ -132,9 +132,6 @@ require '../../include/config/connect.php';
                 </div>
         </form>
     </main>
-
-    <script src = "//localhost/biofert/js/formulario.js"></script>
-    <script src = "https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
 <?php 
     incluirTemplate('footer');

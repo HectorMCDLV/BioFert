@@ -76,20 +76,30 @@ require '../../include/config/connect.php';
             </div>
     <?php endforeach; ?>
 
-    <form class = "formulario" method="POST" id = "formulario" action=''>
-        
-        <fieldset>
-                <label>Correo: </label>
-                <input type="email" name="email">
+    <div class="centrar">
+    <form class = "formularioLogin" method="POST" id = "formularioLogin" action=''>
+        <div class = "formulario__grupo" id = "grupo__nombre">
+            <label class = "formulario__label" for="email">Correo: </label>
+            <div class="formulario__grupo-input">
+                <input class="formulario__input" type="email" id="email" name="email">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El email ingresado no es valido</p>
+        </div>
 
-                <label>Constraseña: </label>
-                <input type="password" name="contraseña">
-
-                <a class="link" href="/biofert/admin/Login/Register.php">Registrate Aqui.</a>
-
-                <button type="sumbit" >Ingresar</button>
-        </fieldset>
+        <div class = "formulario__grupo" id = "grupo__nombre">
+            <label class = "formulario__label" for="contraseña">Contraseña: </label>
+            <div class="formulario__grupo-input">
+                <input class="formulario__input" type="password" id="contraseña" name="contraseña">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">La contraseña ingresada no es valida</p>
+        </div>
+                
+        <a class="link" href="/biofert/admin/Login/Register.php">Registrate Aqui.</a>
+        <button type="sumbit" >Ingresar</button>
     </form>
+    </div>
 </main>
 
 <?php 
