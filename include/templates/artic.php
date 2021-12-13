@@ -4,10 +4,7 @@
      $request = $_GET['request'];
      
      $id = filter_var($id, FILTER_VALIDATE_INT);
-     
-     //if(!$id){
-     //     header('Location: ../index.php');
-     //} 
+    
     //IMPORTAR LA CONEXION A LA BD
     require __DIR__ . '/../config/connect.php';
     $db = conectarDB();
