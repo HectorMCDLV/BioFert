@@ -55,7 +55,7 @@
 
 <main class="contenedor">
     <?php if( intval( $request ) === 1 ): ?>
-        <p class="alerta exito">producto Agragado al Carrito Exitosamente</p>
+        <p class="alerta_exito">producto Agregado al Carrito Exitosamente</p>
     <?php endif; ?>
     <h1><?php echo $producto['nombre']; ?></h1>
     <div class="producto__diseño">

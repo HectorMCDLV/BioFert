@@ -602,3 +602,14 @@ table,th,td {
     height: 35rem;
     border-radius: 0rem;
 }
+
+.alerta_exito{
+    padding: .5rem;
+    text-align: center;
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    font-family: var(--fuentePrincipal);
+}

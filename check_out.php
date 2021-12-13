@@ -47,9 +47,13 @@
         <div class="carrito__producto">
             
             <a href="#">
-                <img class="carrito__imagen" src="/biogfert/img/<?php echo $compra['imagen']; ?>" >
+                <img class="carrito__imagen" src="//localhost/biofert/imagenes/<?php echo $compra['imagen']; ?>" >
             </a>
 
+            <?php
+            echo $compra['imagen'];
+            ?>
+            
             <div class="carrito__info--compra">
                 <a href="#">
                     <p class="carrito__info--nombre"><?php echo $compra['nombre']; ?></p>

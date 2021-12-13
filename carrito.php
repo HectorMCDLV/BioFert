@@ -69,7 +69,6 @@ incluirTemplate('header');
             </a>    
             <p class="carrito__info--precio">$ <?php echo $producto['precio']; ?></p>
             <p class="carrito__info--UD">Cantidad:  <?php echo $producto['cantidad']; ?></p>
-            <p class="carrito__info--UD" href="">Eliminar</p>
             <form method="POST">
                             <input type="hidden" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
                             <input type="hidden" name="id_pedido" value="<?php echo $producto['id_pedido']; ?>">

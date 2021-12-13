@@ -77,8 +77,8 @@ require '../../include/config/connect.php';
     <?php endforeach; ?>
 
     <div class="centrar">
-    <form class = "formularioLogin" method="POST" id = "formularioLogin" action=''>
-        <div class = "formulario__grupo" id = "grupo__nombre">
+    <form class = "formularioLogin" method="POST" id = "formulario" action=''>
+        <div class = "formulario__grupo" id = "grupo__email">
             <label class = "formulario__label" for="email">Correo: </label>
             <div class="formulario__grupo-input">
                 <input class="formulario__input" type="email" id="email" name="email">
@@ -87,7 +87,7 @@ require '../../include/config/connect.php';
             <p class="formulario__input-error">El email ingresado no es valido</p>
         </div>
 
-        <div class = "formulario__grupo" id = "grupo__nombre">
+        <div class = "formulario__grupo" id = "grupo__contraseña">
             <label class = "formulario__label" for="contraseña">Contraseña: </label>
             <div class="formulario__grupo-input">
                 <input class="formulario__input" type="password" id="contraseña" name="contraseña">
