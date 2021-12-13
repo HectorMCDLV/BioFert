@@ -67,12 +67,12 @@ incluirTemplate('header');
             <a href="#">
                 <p class="carrito__info--titulo"><?php echo $producto['nombre']; ?></p>
             </a>    
-            <p class="carrito__info--precio">$ <?php echo $producto['precio']; ?></p>
-            <p class="carrito__info--UD">Cantidad:  <?php echo $producto['cantidad']; ?></p>
+            <p class="carrito__info--precio"> $<?php echo $producto['precio']; ?></p>
+            <p class="carrito__info--UD">  Cantidad: <?php echo $producto['cantidad']; ?></p>
             <form method="POST">
                             <input type="hidden" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
                             <input type="hidden" name="id_pedido" value="<?php echo $producto['id_pedido']; ?>">
-                            <input type="submit" value="Eliminar" class="reset carrito__info--UD"></input>
+                            <input type="submit" value="Eliminar" class="boton w-sm-100"></input>
             </form>
 
 
@@ -82,7 +82,7 @@ incluirTemplate('header');
     <div>
         <a href="/biofert/check_out.php">   
             <h3 class="carrito__subtotal">Subtotal: $<?php echo $subTotal; ?></h3>
-            <button class="buton" >Pagar</button>
+            <button class="boton" >Pagar</button>
         </a>  
     </div>
 </main>
